@@ -30,7 +30,7 @@ async function fetchJson() {
 }
 
 function showRunners() {
-  for (let index = 3; index < 10; index++) {
+  for (let index = 3; index < runners.length; index++) {
     const runner = runners[index];
     const html =
       /*html */
