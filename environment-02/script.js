@@ -120,21 +120,17 @@ function initApp() {
 
 function showAthletes() {
   document.querySelector("#athletes-list").innerHTML = "";
-
-  for (const athlete of athletes) {
-    showAthlete(athlete);
-  }
-}
-
-function showAthlete(athletes) {
-  const html = /*html */ `
+  for (let index = 0; index < 3; index++) {
+    const athlete = athletes[index];
+    const html = /*html */ `
   
-  <li>${athletes.name}, Top fart: ${athletes.topSpeed}</li>
+  <li>${athlete.name}, Top fart: ${athlete.topSpeed}</li>
 
   `;
-  document
-    .querySelector("#athletes-list")
-    .insertAdjacentHTML("beforeend", html);
+    document
+      .querySelector("#athletes-list")
+      .insertAdjacentHTML("beforeend", html);
+  }
 }
 
 function createAthlete(name, topSpeed) {
@@ -154,8 +150,13 @@ function createAthleteSubmit(event) {
   createAthlete(name, topSpeed);
   sortBySpeed();
   showAthletes();
+  console.log(athletes);
 }
 
 function sortBySpeed() {
   athletes.sort((low, high) => low.topSpeed - high.topSpeed);
 }
+
+// function showTopAthletes() {
+//   document.querySelector("");
+// }
