@@ -68,6 +68,7 @@ function createRoomForm(event) {
 }
 
 function showRooms() {
+  document.querySelector("#rooms-table").innerHTML = "";
   for (const room of rooms) {
     showRoom(room);
   }
